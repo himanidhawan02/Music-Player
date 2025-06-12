@@ -1,0 +1,249 @@
+body {
+  font-family: sans-serif;
+  background-color: #eae9e9;
+}
+
+:root {
+  --primary-color: rgb(87, 204, 250);
+  --light-primary-color: rgb(84, 217, 250);
+  --dark-primary-color: rgb(1, 137, 190);
+  --secondary-color: rgb(176, 176, 176);
+  --dark-secondary-color: rgb(130, 129, 129);
+  --tertiary-color: rgb(170, 79, 255);
+  --initial-margin: 1rem;
+  --initial-padding: 1rem;
+}
+
+/* Heading Section */
+#heading {
+  padding: 1rem;
+}
+
+#heading h1 {
+  text-align: center;
+}
+
+/* Main Section */
+#container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* Sections Styling */
+.section {
+  /* border: 2px solid black; */
+  background-color: var(--primary-color);
+  margin: var(--initial-margin);
+  padding: var(--initial-padding);
+  border-radius: 1.2rem;
+  font-size: large;
+  height: 85vh;
+}
+
+/* Section-1 */
+
+#section-1 {
+  height: 95vh;
+}
+
+#song-category {
+  background-color: var(--secondary-color);
+  padding: 0.4rem;
+  margin: 0.4rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  border: 0px;
+}
+
+#song-names {
+  margin-top: 2rem;
+}
+
+.all-songs,
+.all-playlists {
+  background-color: var(--dark-primary-color);
+  color: white;
+  padding: 0.65rem;
+  border-radius: 0.4rem;
+  font-size: medium;
+  transition: background-color 125ms ease-in-out;
+}
+
+.all-songs:hover,
+.all-playlists:hover {
+  cursor: pointer;
+  background-color: var(--dark-secondary-color);
+}
+
+#filter {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-content: start;
+}
+
+/* Section-2 */
+
+#section-2 {
+  height: 95vh;
+}
+
+#song-card {
+  text-align: center;
+}
+
+#card {
+  height: 70%;
+  height: 25rem;
+  width: 100%;
+  background-color: var(--dark-primary-color);
+  border-radius: 1rem;
+  padding: var(--initial-padding);
+  margin: auto;
+  margin-bottom: 1.55rem;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 3px 6px var(--light-primary-color);
+}
+
+#image-div {
+  background-color: black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: var(--initial-margin);
+  height: 18rem;
+}
+
+#song-img {
+  height: 100%;
+  width: 82%;
+  object-fit: cover;
+}
+
+audio {
+  width: 80%;
+  margin-bottom: 0.5rem;
+}
+
+.controls {
+  border: 0px;
+  padding: 0.5rem;
+  margin: 0.4rem;
+  width: 4rem;
+  font-size: large;
+  border-radius: 0.4rem;
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+#add-to-playlist {
+  width: 9rem;
+}
+
+#song-title,
+#artist-name {
+  margin: 0.25rem;
+  text-align: left;
+}
+
+.controls:hover {
+  cursor: pointer;
+}
+
+/* Section-3 */
+
+#create-playlist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#create-playlist input,
+button {
+  padding: 0.4rem;
+  font-size: 1rem;
+  margin: 0.4rem;
+  border-radius: 0.4rem;
+  border: 0px;
+}
+
+#create-playlist button {
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+#create-playlist button:hover {
+  cursor: pointer;
+}
+
+/* Toggle Theme Button */
+#theme-switch {
+  background-color: var(--secondary-color);
+  width: 8rem;
+  height: 2.25rem;
+  border-radius: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.slider {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider + span.change-theme::before {
+  content: "";
+  position: absolute;
+  left: 1.4rem;
+  top: 1.4rem;
+  height: 1.55rem;
+  width: 1.55rem;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0.3rem;
+  border: 2px solid white;
+  transition: all ease-in-out 300ms;
+}
+
+span.change-theme::before:hover {
+  cursor: pointer;
+}
+
+.slider:checked + span.change-theme::before {
+  transform: translateX(2.15rem);
+}
+
+span.change-theme {
+  margin: 0.5rem;
+  color: white;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  background-color: rgb(130, 129, 129);
+}
+
+body.dark-theme .all-songs {
+  background-color: rgb(132, 131, 131);
+}
+
+body.dark-theme .all-playlists {
+  background-color: rgb(176, 176, 176);
+}
+
+body.dark-theme .section {
+  background-color: rgb(62, 62, 63);
+}
+
+body.dark-theme .h3,
+body.dark-theme h1 {
+  color: white;
+}
+
+body.dark-theme #card {
+  background-color: rgb(176, 176, 176);
+  box-shadow: 2px 2px 3px 6px rgb(47, 47, 47);
+}
+
+body.dark-theme #filter span {
+  color: white;
+}
